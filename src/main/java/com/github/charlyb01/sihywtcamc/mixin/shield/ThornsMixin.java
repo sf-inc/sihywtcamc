@@ -1,4 +1,4 @@
-package com.github.charlyb01.sihywtcamc.mixin;
+package com.github.charlyb01.sihywtcamc.mixin.shield;
 
 import net.minecraft.enchantment.ThornsEnchantment;
 import net.minecraft.item.ItemStack;

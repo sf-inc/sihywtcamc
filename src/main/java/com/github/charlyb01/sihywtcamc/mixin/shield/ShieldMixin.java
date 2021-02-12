@@ -1,4 +1,4 @@
-package com.github.charlyb01.sihywtcamc.mixin;
+package com.github.charlyb01.sihywtcamc.mixin.shield;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ShieldItem;
