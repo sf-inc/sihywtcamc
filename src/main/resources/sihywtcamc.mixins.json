@@ -4,6 +4,8 @@
   "package": "com.github.charlyb01.sihywtcamc.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ShieldMixin",
+    "ThornsMixin"
   ],
   "client": [
   ],
