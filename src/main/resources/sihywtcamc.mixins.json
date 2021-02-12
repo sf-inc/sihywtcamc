@@ -6,6 +6,10 @@
   "mixins": [
     "bow.BowMixin",
     "bow.ProjectileMixin",
+    "bow.power.FlameMixin",
+    "bow.power.InfinityMixin",
+    "bow.power.PowerMixin",
+    "bow.power.PunchMixin",
     "shield.ShieldMixin",
     "shield.ThornsMixin"
   ],
