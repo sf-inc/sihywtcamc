@@ -4,6 +4,7 @@
   "package": "com.github.charlyb01.sihywtcamc.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ItemAccessor",
     "bow.BowMixin",
     "bow.ProjectileMixin",
     "bow.power.FlameMixin",
