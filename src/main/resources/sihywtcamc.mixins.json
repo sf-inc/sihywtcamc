@@ -14,7 +14,8 @@
     "eating.LivingEntityMixin",
     "eating.PlayerDamagedMixin",
     "shield.ShieldMixin",
-    "shield.ThornsMixin"
+    "shield.ThornsMixin",
+    "sweep.PlayerSweepAttackMixin"
   ],
   "client": [
   ],
