@@ -11,6 +11,8 @@
     "bow.power.InfinityMixin",
     "bow.power.PowerMixin",
     "bow.power.PunchMixin",
+    "eating.LivingEntityMixin",
+    "eating.PlayerDamagedMixin",
     "shield.ShieldMixin",
     "shield.ThornsMixin"
   ],
