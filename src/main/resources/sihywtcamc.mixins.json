@@ -6,6 +6,7 @@
   "mixins": [
     "ItemAccessor",
     "PlayerAxeMixin",
+    "PlayerKnockbackMixin",
     "bow.BowMixin",
     "bow.ProjectileMixin",
     "bow.power.FlameMixin",
@@ -18,7 +19,8 @@
     "drink.PotionMixin",
     "eating.LivingEntityMixin",
     "eating.PlayerDamagedMixin",
-    "PlayerKnockbackMixin",
+    "projectile.EggMixin",
+    "projectile.SnowBallMixin",
     "shield.ShieldMixin",
     "shield.ThornsMixin",
     "sweep.PlayerSweepAttackMixin"
