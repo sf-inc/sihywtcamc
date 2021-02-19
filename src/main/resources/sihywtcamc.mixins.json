@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "ItemAccessor",
+    "PlayerAxeMixin",
     "bow.BowMixin",
     "bow.ProjectileMixin",
     "bow.power.FlameMixin",
