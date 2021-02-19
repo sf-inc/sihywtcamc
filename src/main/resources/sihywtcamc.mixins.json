@@ -18,6 +18,7 @@
     "drink.PotionMixin",
     "eating.LivingEntityMixin",
     "eating.PlayerDamagedMixin",
+    "PlayerKnockbackMixin",
     "shield.ShieldMixin",
     "shield.ThornsMixin",
     "sweep.PlayerSweepAttackMixin"
