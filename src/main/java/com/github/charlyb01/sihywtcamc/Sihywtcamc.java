@@ -8,5 +8,6 @@ public class Sihywtcamc implements ModInitializer {
     @Override
     public void onInitialize() {
         ((ItemAccessor) Items.POTION).setMaxCount(16);
+        ((ItemAccessor) Items.MILK_BUCKET).setMaxCount(16);
     }
 }
