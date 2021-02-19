@@ -9,5 +9,6 @@ public class Sihywtcamc implements ModInitializer {
     public void onInitialize() {
         ((ItemAccessor) Items.POTION).setMaxCount(16);
         ((ItemAccessor) Items.MILK_BUCKET).setMaxCount(16);
+        ((ItemAccessor) Items.SNOWBALL).setMaxCount(64);
     }
 }
