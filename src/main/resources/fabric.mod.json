@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "icon": "assets/sihywtcamc/icon.png",
-  "environment": "server",
+  "environment": "*",
   "entrypoints": {
     "main": [
       "com.github.charlyb01.sihywtcamc.Sihywtcamc"
