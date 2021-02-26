@@ -15,6 +15,8 @@
 
   "text.autoconfig.sihywtcamc.category.tools": "Tools",
   "text.autoconfig.sihywtcamc.option.toolsConfig.swordSweepingEdge": "Sweep attack only with enchant",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc": "Shield smaller protection arc",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc.@Tooltip": "Protect 120 degrees instead of 180",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldEnchantable": "Shield enchantable",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldThorns": "Thorns on shield with anvil",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldCooldown": "Shield cooldown after axe attack",

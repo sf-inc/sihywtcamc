@@ -8,6 +8,8 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 public class ToolsConfig implements ConfigData {
     public boolean swordSweepingEdge = true;
 
+    @ConfigEntry.Gui.Tooltip
+    public boolean shieldReduceArc = true;
     public boolean shieldEnchantable = true;
     public boolean shieldThorns = true;
 
