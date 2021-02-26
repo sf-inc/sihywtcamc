@@ -5,7 +5,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ShieldItem;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,12 +23,7 @@ public abstract class PlayerKnockbackMixin extends LivingEntity {
     @Inject(method = "damage", at = @At(value = "RETURN", ordinal = 3), cancellable = true)
     private void takeAllKnockback(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (ModConfig.get().generalConfig.eggSnowball.knockbackPlayer) {
-            if (ModConfig.get().generalConfig.eggSnowball.shieldStopKnockack) {
-                cir.setReturnValue(!(this.activeItemStack.getItem() instanceof ShieldItem)
-                        && super.damage(source, amount));
-            } else {
-                cir.setReturnValue(super.damage(source, amount));
-            }
+            cir.setReturnValue(super.damage(source, amount));
         }
     }
 }

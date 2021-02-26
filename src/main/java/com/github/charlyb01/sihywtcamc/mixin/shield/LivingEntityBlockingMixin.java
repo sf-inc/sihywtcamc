@@ -8,12 +8,16 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityBlockingMixin extends Entity {
+    @Shadow protected abstract boolean blockedByShield(DamageSource source);
+
     public LivingEntityBlockingMixin(EntityType<?> type, World world) {
         super(type, world);
     }
@@ -32,5 +36,16 @@ public abstract class LivingEntityBlockingMixin extends Entity {
                 cir.setReturnValue(false);
             }
         }
+    }
+
+    @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;applyDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"))
+    private boolean cancelNoDamageKnockback(boolean bl, DamageSource source, float amount) {
+        if (amount == 0.0F
+                && source.isProjectile()
+                && ModConfig.get().generalConfig.eggSnowball.shieldStopKnockack
+                && this.blockedByShield(source)) {
+            bl = true;
+        }
+        return bl;
     }
 }
