@@ -14,6 +14,8 @@
   "text.autoconfig.sihywtcamc.option.generalConfig.stacks.snowBallVeryStackable": "Snow balls by 64",
 
   "text.autoconfig.sihywtcamc.category.tools": "Tools",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues": "Change attributes values",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues.@Tooltip": "Attack damage and speed",
   "text.autoconfig.sihywtcamc.option.toolsConfig.swordSweepingEdge": "Sweep attack only with enchant",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc": "Shield smaller protection arc",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc.@Tooltip": "Protect 120 degrees instead of 180",

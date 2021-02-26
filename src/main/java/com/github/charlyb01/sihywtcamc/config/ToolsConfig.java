@@ -6,6 +6,9 @@ import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 
 @Config(name = "tools")
 public class ToolsConfig implements ConfigData {
+    @ConfigEntry.Gui.RequiresRestart
+    @ConfigEntry.Gui.Tooltip
+    public boolean newAttributesValues = true;
     public boolean swordSweepingEdge = true;
 
     @ConfigEntry.Gui.Tooltip
