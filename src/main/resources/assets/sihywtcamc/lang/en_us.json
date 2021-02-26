@@ -1,0 +1,27 @@
+{
+  "text.autoconfig.sihywtcamc.title": "SIHYWTCAMC Configuration",
+
+  "text.autoconfig.sihywtcamc.category.general": "General",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eatDrinkCancellable": "Cancel eat/drink action when attacked",
+  "text.autoconfig.sihywtcamc.option.generalConfig.drinkFaster": "Drink potions faster",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball": "Eggs/Snow balls",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.cooldown": "Have cooldown",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.knockbackPlayer": "Knockback players",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.shieldStopKnockack": "Knockback cancelled using shield",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks": "Stacks",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.potionStackable": "Potions by 16",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.milkBucketStackable": "Milk bucket by 16",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.snowBallVeryStackable": "Snow balls by 64",
+
+  "text.autoconfig.sihywtcamc.category.tools": "Tools",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.swordSweepingEdge": "Sweep attack only with enchant",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldEnchantable": "Shield enchantable",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldThorns": "Thorns on shield with anvil",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldCooldown": "Shield cooldown after axe attack",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.axeCooldown": "Axe cooldown after shield use",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.bowLessPower": "Decrease bow power enchant",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive": "Power enchant exclusive",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "Incompatible with flame/punch/infinity",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive": "Multishot enchant inclusive",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible with piercing"
+}

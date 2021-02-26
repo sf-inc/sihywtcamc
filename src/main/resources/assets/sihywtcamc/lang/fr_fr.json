@@ -1,0 +1,27 @@
+{
+  "text.autoconfig.sihywtcamc.title": "SIHYWTCAMC Configuration",
+
+  "text.autoconfig.sihywtcamc.category.general": "Général",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eatDrinkCancellable": "Annuler manger/boire quand attaqué",
+  "text.autoconfig.sihywtcamc.option.generalConfig.drinkFaster": "Boire les potions plus vite",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball": "Oeufs/Boules de neige",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.cooldown": "Ont un cooldown",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.knockbackPlayer": "Knockback les joueurs",
+  "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.shieldStopKnockack": "Recul annulé en parant avec le bouclier",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks": "Stacks",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.potionStackable": "Potions par 16",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.milkBucketStackable": "Seaux de lait par 16",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.snowBallVeryStackable": "Boules de neige par 64",
+
+  "text.autoconfig.sihywtcamc.category.tools": "Outils",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.swordSweepingEdge": "Dégâts de zone seulement avec l'enchantement",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldEnchantable": "Bouclier enchantable",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldThorns": "Epines sur le bouclier via enclume",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldCooldown": "Cooldown bouclier après attaque à la hache",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.axeCooldown": "Cooldown hache après utilisation du bouclier",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.bowLessPower": "Réduire l'enchantement puissance",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive": "Enchantement puissance exclusif",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "Incompatible avec flamme/frappe/infinité",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive": "Enchantement tir multiple inclusif",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible avec perforation"
+}

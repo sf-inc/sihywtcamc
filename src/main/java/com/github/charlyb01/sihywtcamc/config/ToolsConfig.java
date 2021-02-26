@@ -2,6 +2,7 @@ package com.github.charlyb01.sihywtcamc.config;
 
 import me.sargunvohra.mcmods.autoconfig1u.ConfigData;
 import me.sargunvohra.mcmods.autoconfig1u.annotation.Config;
+import me.sargunvohra.mcmods.autoconfig1u.annotation.ConfigEntry;
 
 @Config(name = "tools")
 public class ToolsConfig implements ConfigData {
@@ -14,7 +15,9 @@ public class ToolsConfig implements ConfigData {
     public boolean axeCooldown = true;
 
     public boolean bowLessPower = true;
+    @ConfigEntry.Gui.Tooltip()
     public boolean bowPowerExclusive = true;
 
+    @ConfigEntry.Gui.Tooltip()
     public boolean crossbowMultishotInclusive = true;
 }
