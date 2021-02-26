@@ -18,7 +18,7 @@ public class SnowBallMixin {
     @Inject(method = "use", at = @At("HEAD"))
     private void addSnowBallCooldown(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
         if (ModConfig.get().generalConfig.eggSnowball.cooldown) {
-            user.getItemCooldownManager().set(Items.SNOWBALL, 5);
+            user.getItemCooldownManager().set(Items.SNOWBALL, 4);
         }
     }
 }
