@@ -20,7 +20,7 @@ public abstract class PlayerEatDrinkMixin extends LivingEntity {
 
     @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;dropShoulderEntities()V"))
     private void cancelEatDrink(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if (ModConfig.get().generalConfig.eatDrinkCancellable) {
+        if (ModConfig.get().generalConfig.eatDrinkCancellable && source.getAttacker() != null) {
             if (this.getActiveItem().isFood() || this.getActiveItem().getItem() instanceof PotionItem) {
                 this.clearActiveItem();
             }
