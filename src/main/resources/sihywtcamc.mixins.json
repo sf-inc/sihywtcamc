@@ -16,10 +16,11 @@
     "crossbow.MultishotMixin",
     "crossbow.PiercingMixin",
     "drink.MilkMixin",
-    "drink.PotionMixin",
     "drink.PlayerEatDrinkMixin",
+    "drink.PotionMixin",
     "projectile.EggMixin",
     "projectile.SnowBallMixin",
+    "shield.LivingEntityBlockingMixin",
     "shield.ShieldMixin",
     "shield.ThornsMixin",
     "sweep.PlayerSweepAttackMixin"
