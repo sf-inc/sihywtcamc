@@ -18,6 +18,9 @@
   "entrypoints": {
     "main": [
       "com.github.charlyb01.sihywtcamc.Sihywtcamc"
+    ],
+    "modmenu": [
+      "com.github.charlyb01.sihywtcamc.config.ModMenuIntegration"
     ]
   },
   "mixins": [
