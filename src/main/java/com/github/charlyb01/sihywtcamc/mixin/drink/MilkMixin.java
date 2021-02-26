@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.drink;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.MilkBucketItem;
@@ -13,6 +14,6 @@ public class MilkMixin extends Item {
 
     @Override
     public int getMaxUseTime(ItemStack stack) {
-        return 20;
+        return ModConfig.get().generalConfig.drinkFaster ? 20 : 32;
     }
 }

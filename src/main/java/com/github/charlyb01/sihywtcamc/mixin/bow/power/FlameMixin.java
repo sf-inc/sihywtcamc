@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.bow.power;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.enchantment.FlameEnchantment;
@@ -15,7 +16,8 @@ public class FlameMixin extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return !(other instanceof PowerEnchantment)
-                && super.canAccept(other);
+        return ModConfig.get().toolsConfig.bowPowerExclusive ?
+                !(other instanceof PowerEnchantment) :
+                super.canAccept(other);
     }
 }

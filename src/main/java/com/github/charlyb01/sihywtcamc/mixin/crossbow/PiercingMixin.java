@@ -1,8 +1,7 @@
 package com.github.charlyb01.sihywtcamc.mixin.crossbow;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.enchantment.PiercingEnchantment;
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
+import net.minecraft.enchantment.*;
 import net.minecraft.entity.EquipmentSlot;
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -14,6 +13,8 @@ public class PiercingMixin extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other);
+        return ModConfig.get().toolsConfig.crossbowMultishotInclusive ?
+                super.canAccept(other) :
+                !(other instanceof MultishotEnchantment);
     }
 }

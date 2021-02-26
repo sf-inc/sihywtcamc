@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.bow.power;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.enchantment.*;
 import net.minecraft.entity.EquipmentSlot;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,9 +13,10 @@ public class PowerMixin extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return !(other instanceof PunchEnchantment)
+        return ModConfig.get().toolsConfig.bowPowerExclusive ?
+                !(other instanceof PunchEnchantment)
                 && !(other instanceof FlameEnchantment)
-                && !(other instanceof InfinityEnchantment)
-                && super.canAccept(other);
+                && !(other instanceof InfinityEnchantment) :
+                super.canAccept(other);
     }
 }

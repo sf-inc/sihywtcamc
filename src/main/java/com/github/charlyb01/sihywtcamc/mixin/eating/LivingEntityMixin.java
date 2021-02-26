@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.eating;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import com.github.charlyb01.sihywtcamc.imixin.IPlayerDamagedMixin;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -25,7 +26,9 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;usageTick(Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;I)V"), method = "tickActiveItemStack")
     private void cancelUse(CallbackInfo ci) {
-        if (this.getType().equals(EntityType.PLAYER) && ((IPlayerDamagedMixin) this).getDamaged()) {
+        if (ModConfig.get().generalConfig.eatDrinkCancellable
+                && this.getType().equals(EntityType.PLAYER)
+                && ((IPlayerDamagedMixin) this).getDamaged()) {
             if (this.getActiveItem().isFood() || this.getActiveItem().getItem() instanceof PotionItem) {
                 this.clearActiveItem();
             }

@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -22,6 +23,13 @@ public abstract class PlayerKnockbackMixin extends LivingEntity {
 
     @Inject(method = "damage", at = @At(value = "RETURN", ordinal = 3), cancellable = true)
     private void takeAllKnockback(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(!(this.activeItemStack.getItem() instanceof ShieldItem) && super.damage(source, amount));
+        if (ModConfig.get().generalConfig.eggSnowball.knockbackPlayer) {
+            if (ModConfig.get().generalConfig.eggSnowball.shieldStopKnockack) {
+                cir.setReturnValue(!(this.activeItemStack.getItem() instanceof ShieldItem)
+                        && super.damage(source, amount));
+            } else {
+                cir.setReturnValue(super.damage(source, amount));
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.shield;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -14,13 +15,14 @@ public class ShieldMixin extends Item {
 
     @Override
     public int getEnchantability() {
-        return 10;
+        return ModConfig.get().toolsConfig.shieldEnchantable ? 10 : 0;
     }
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         super.onStoppedUsing(stack, world, user, remainingUseTicks);
-        if (user instanceof PlayerEntity) {
+        if (ModConfig.get().toolsConfig.axeCooldown
+                && user instanceof PlayerEntity) {
             PlayerEntity playerEntity = (PlayerEntity) user;
             if (playerEntity.getMainHandStack().getItem() instanceof AxeItem) {
                 playerEntity.getItemCooldownManager().set(playerEntity.getMainHandStack().getItem(), 40);

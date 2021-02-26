@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.bow;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -19,10 +20,12 @@ public abstract class ProjectileMixin {
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/PersistentProjectileEntity;setDamage(D)V", shift = At.Shift.AFTER),
             method = "applyEnchantmentEffects")
     private void changePowerDamageP(LivingEntity entity, float damageModifier, CallbackInfo ci) {
-        int level = EnchantmentHelper.getEquipmentLevel(Enchantments.POWER, entity);
-        if (level > 0) {
-            this.setDamage(this.getDamage() - (double)level * 0.5D - 0.5D);
-            this.setDamage(this.getDamage() + (double)level * 0.4D);
+        if (ModConfig.get().toolsConfig.bowLessPower) {
+            int level = EnchantmentHelper.getEquipmentLevel(Enchantments.POWER, entity);
+            if (level > 0) {
+                this.setDamage(this.getDamage() - (double) level * 0.5D - 0.5D);
+                this.setDamage(this.getDamage() + (double) level * 0.4D);
+            }
         }
     }
 }

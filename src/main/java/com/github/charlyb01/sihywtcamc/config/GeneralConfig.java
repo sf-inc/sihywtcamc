@@ -13,8 +13,11 @@ public class GeneralConfig implements ConfigData {
     public Stacks stacks = new Stacks();
 
     public static class Stacks {
+        @ConfigEntry.Gui.RequiresRestart
         public boolean potionStackable = true;
+        @ConfigEntry.Gui.RequiresRestart
         public boolean milkBucketStackable = true;
+        @ConfigEntry.Gui.RequiresRestart
         public boolean snowBallVeryStackable = true;
     }
 

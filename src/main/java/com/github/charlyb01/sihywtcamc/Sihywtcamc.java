@@ -13,8 +13,14 @@ public class Sihywtcamc implements ModInitializer {
     public void onInitialize() {
         AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
 
-        ((ItemAccessor) Items.POTION).setMaxCount(16);
-        ((ItemAccessor) Items.MILK_BUCKET).setMaxCount(16);
-        ((ItemAccessor) Items.SNOWBALL).setMaxCount(64);
+        if (ModConfig.get().generalConfig.stacks.potionStackable) {
+            ((ItemAccessor) Items.POTION).setMaxCount(16);
+        }
+        if (ModConfig.get().generalConfig.stacks.milkBucketStackable) {
+            ((ItemAccessor) Items.MILK_BUCKET).setMaxCount(16);
+        }
+        if (ModConfig.get().generalConfig.stacks.snowBallVeryStackable) {
+            ((ItemAccessor) Items.SNOWBALL).setMaxCount(64);
+        }
     }
 }
