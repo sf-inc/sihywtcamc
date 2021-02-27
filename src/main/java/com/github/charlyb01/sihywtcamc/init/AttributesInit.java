@@ -14,6 +14,7 @@ public class AttributesInit {
             PickaxeInit.init();
             ShovelInit.init();
             HoeInit.init();
+            TridentInit.init();
         }
     }
 }

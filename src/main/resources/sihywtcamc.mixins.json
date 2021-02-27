@@ -10,6 +10,7 @@
     "attributes.MiningToolAccessor",
     "attributes.PlayerReachMixin",
     "attributes.SwordAccessor",
+    "attributes.TridentAccessor",
     "bow.BowMixin",
     "bow.ProjectileMixin",
     "bow.power.FlameMixin",
