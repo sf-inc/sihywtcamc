@@ -6,6 +6,17 @@ Currently, every **stable** mod version is available on **1.16.4** and **1.16.5*
 * **x.X versions** are either updates that add content or major bug fixes
 * **x.x.X versions** are either small content updates (language translation, new textures, ...) or bug fixes
 
+# v1.1
+
+* Multi version support file: tested with 1.16.3 to 1.16.5. Should work for most of the versions
+* Configurable mod: can enable/disable each feature separately
+* Reduce egg/snow balls cooldown to 4 ticks: spam is back
+* Fix the cancelling of eat/drink: now only when attacked (not cancelled for other damage sources)
+* Reduce shield arc protection from 180 to 120 degrees
+* Fix blocking no damage projectiles (eggs/snow balls): was able to block from any side
+* Change tools/weapon attributes: attack damage and speed
+* Add attack reach attributes to weapons
+
 ## v1.0.1
 
 * Fix: server crash
