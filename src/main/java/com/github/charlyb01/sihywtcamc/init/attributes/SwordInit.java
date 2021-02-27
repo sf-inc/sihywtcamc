@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.init.attributes;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import com.github.charlyb01.sihywtcamc.mixin.ItemAccessor;
 import com.github.charlyb01.sihywtcamc.mixin.attributes.SwordAccessor;
 import com.google.common.collect.ImmutableMultimap;
@@ -20,6 +21,8 @@ public class SwordInit {
 
     private static final float swordSpeed = -1;
 
+    private static final float swordReach = 0.5F;
+
     public static void init() {
         initSword(Items.WOODEN_SWORD, weakDamage);
         initSword(Items.STONE_SWORD, weakDamage);
@@ -36,6 +39,11 @@ public class SwordInit {
                 "Weapon modifier", damage, EntityAttributeModifier.Operation.ADDITION));
         swordBuilder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(((ItemAccessor) item).getATTACK_SPEED_MODIFIER_ID(),
                 "Weapon modifier", swordSpeed, EntityAttributeModifier.Operation.ADDITION));
+
+        if (ModConfig.get().toolsConfig.reachAttribute) {
+            swordBuilder.put(ReachAttribute.GENERIC_ATTACK_REACH, new EntityAttributeModifier(ReachAttribute.ATTACK_REACH_MODIFIER_ID,
+                    "Weapon modifier", swordReach, EntityAttributeModifier.Operation.ADDITION));
+        }
 
         ((SwordAccessor) item).setAttackDamage(damage);
         ((SwordAccessor) item).setAttributeModifiers(swordBuilder.build());

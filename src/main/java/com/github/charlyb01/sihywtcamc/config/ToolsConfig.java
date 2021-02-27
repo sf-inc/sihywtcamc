@@ -9,6 +9,9 @@ public class ToolsConfig implements ConfigData {
     @ConfigEntry.Gui.RequiresRestart
     @ConfigEntry.Gui.Tooltip
     public boolean newAttributesValues = true;
+    @ConfigEntry.Gui.RequiresRestart
+    public boolean reachAttribute = true;
+
     public boolean swordSweepingEdge = true;
 
     @ConfigEntry.Gui.Tooltip

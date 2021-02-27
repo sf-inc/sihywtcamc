@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.init.attributes;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import com.github.charlyb01.sihywtcamc.mixin.ItemAccessor;
 import com.github.charlyb01.sihywtcamc.mixin.attributes.MiningToolAccessor;
 import com.google.common.collect.ImmutableMultimap;
@@ -22,6 +23,8 @@ public class HoeInit {
     private static final float ironSpeed = stoneSpeed + 0.5F;
     private static final float highSpeed = ironSpeed + 0.5F;
 
+    private static final float hoeReach = 1;
+
     public static void init() {
         initHoe(Items.WOODEN_HOE, weakDamage, woodenSpeed);
         initHoe(Items.STONE_HOE, weakDamage, stoneSpeed);
@@ -38,6 +41,11 @@ public class HoeInit {
                 "Tool modifier", damage, EntityAttributeModifier.Operation.ADDITION));
         hoeBuilder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(((ItemAccessor) item).getATTACK_SPEED_MODIFIER_ID(),
                 "Tool modifier", speed, EntityAttributeModifier.Operation.ADDITION));
+
+        if (ModConfig.get().toolsConfig.reachAttribute) {
+            hoeBuilder.put(ReachAttribute.GENERIC_ATTACK_REACH, new EntityAttributeModifier(ReachAttribute.ATTACK_REACH_MODIFIER_ID,
+                    "Weapon modifier", hoeReach, EntityAttributeModifier.Operation.ADDITION));
+        }
 
         ((MiningToolAccessor) item).setAttackDamage(damage);
         ((MiningToolAccessor) item).setAttributeModifiers(hoeBuilder.build());

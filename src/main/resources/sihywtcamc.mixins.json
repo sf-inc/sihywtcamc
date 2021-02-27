@@ -8,6 +8,7 @@
     "PlayerAxeMixin",
     "PlayerKnockbackMixin",
     "attributes.MiningToolAccessor",
+    "attributes.PlayerReachMixin",
     "attributes.SwordAccessor",
     "bow.BowMixin",
     "bow.ProjectileMixin",

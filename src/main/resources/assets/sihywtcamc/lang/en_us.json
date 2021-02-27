@@ -16,6 +16,7 @@
   "text.autoconfig.sihywtcamc.category.tools": "Tools",
   "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues": "Change attributes values",
   "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues.@Tooltip": "Attack damage and speed",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.reachAttribute": "Add attack reach attribute",
   "text.autoconfig.sihywtcamc.option.toolsConfig.swordSweepingEdge": "Sweep attack only with enchant",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc": "Shield smaller protection arc",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc.@Tooltip": "Protect 120 degrees instead of 180",
@@ -27,5 +28,7 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive": "Power enchant exclusive",
   "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "Incompatible with flame/punch/infinity",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive": "Multishot enchant inclusive",
-  "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible with piercing"
+  "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible with piercing",
+
+  "attribute.name.generic.attack_reach": "Attack Reach"
 }
