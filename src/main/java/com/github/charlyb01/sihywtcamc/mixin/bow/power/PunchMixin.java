@@ -14,7 +14,8 @@ public class PunchMixin extends Enchantment {
     @Override
     public boolean canAccept(Enchantment other) {
         return ModConfig.get().toolsConfig.bowPowerExclusive ?
-                !(other instanceof PowerEnchantment) :
+                !(other instanceof PowerEnchantment)
+                && super.canAccept(other) :
                 super.canAccept(other);
     }
 }

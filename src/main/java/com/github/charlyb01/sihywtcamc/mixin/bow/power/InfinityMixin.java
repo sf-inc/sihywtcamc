@@ -15,7 +15,8 @@ public class InfinityMixin extends Enchantment {
     public boolean canAccept(Enchantment other) {
         return ModConfig.get().toolsConfig.bowPowerExclusive ?
                 !(other instanceof MendingEnchantment)
-                && !(other instanceof PowerEnchantment) :
+                && !(other instanceof PowerEnchantment)
+                && super.canAccept(other) :
                 !(other instanceof MendingEnchantment)
                 && super.canAccept(other);
     }

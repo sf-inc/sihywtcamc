@@ -18,6 +18,7 @@ public class MultishotMixin extends Enchantment {
     public boolean canAccept(Enchantment other) {
         return ModConfig.get().toolsConfig.crossbowMultishotInclusive ?
                 super.canAccept(other) :
-                !(other instanceof PiercingEnchantment);
+                !(other instanceof PiercingEnchantment)
+                && super.canAccept(other) ;
     }
 }

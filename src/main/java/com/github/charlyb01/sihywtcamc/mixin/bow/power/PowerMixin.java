@@ -16,7 +16,8 @@ public class PowerMixin extends Enchantment {
         return ModConfig.get().toolsConfig.bowPowerExclusive ?
                 !(other instanceof PunchEnchantment)
                 && !(other instanceof FlameEnchantment)
-                && !(other instanceof InfinityEnchantment) :
+                && !(other instanceof InfinityEnchantment)
+                && super.canAccept(other) :
                 super.canAccept(other);
     }
 }
