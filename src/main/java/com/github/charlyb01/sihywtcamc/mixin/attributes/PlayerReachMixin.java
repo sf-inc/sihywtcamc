@@ -35,7 +35,7 @@ public abstract class PlayerReachMixin extends LivingEntity {
     private void changeReach(Entity target, CallbackInfo ci) {
         if (ModConfig.get().toolsConfig.reachAttribute) {
             double reach = this.getAttributeValue(ReachAttribute.GENERIC_ATTACK_REACH);
-            if (this.squaredDistanceTo(target) > reach * reach) {
+            if (ReachAttribute.reachDistance(this, target) > reach) {
                 ci.cancel();
             }
         }
