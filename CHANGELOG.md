@@ -6,6 +6,13 @@ Currently, every **stable** mod version is available on **1.16.4** and **1.16.5*
 * **x.X versions** are either updates that add content or major bug fixes
 * **x.x.X versions** are either small content updates (language translation, new textures, ...) or bug fixes
 
+## v1.3
+
+* Stack count configurable
+* Tool attributes fully configurable: only in the json (not in gui)
+* Change modded tool attributes too! It means you also can add them a reach attribute
+* Nerfed shield damage absorption: can absorb up to 5 damage, you take the remaining damage (config)
+
 # v1.2
 
 * Fixed reach distance computation: it seemed to be way too short? Now it's fixed and way better!
