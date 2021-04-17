@@ -9,9 +9,9 @@
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.knockbackPlayer": "Knockback les joueurs",
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.shieldStopKnockack": "Recul annulé en parant avec le bouclier",
   "text.autoconfig.sihywtcamc.option.generalConfig.stacks": "Stacks",
-  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.potionStackable": "Potions par 16",
-  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.milkBucketStackable": "Seaux de lait par 16",
-  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.snowBallVeryStackable": "Boules de neige par 64",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.potionStack": "Changer le stack des potions",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.milkBucketStack": "Changer le stack des seaux de lait",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.snowBallStack": "Changer le stack des boules de neige",
 
   "text.autoconfig.sihywtcamc.category.tools": "Outils",
   "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues": "Changer les valeurs des attributs",

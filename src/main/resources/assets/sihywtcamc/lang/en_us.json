@@ -9,9 +9,9 @@
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.knockbackPlayer": "Knockback players",
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.shieldStopKnockack": "Knockback cancelled using shield",
   "text.autoconfig.sihywtcamc.option.generalConfig.stacks": "Stacks",
-  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.potionStackable": "Potions by 16",
-  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.milkBucketStackable": "Milk bucket by 16",
-  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.snowBallVeryStackable": "Snow balls by 64",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.potionStack": "Change potion stack count",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.milkBucketStack": "Change milk bucket stack count",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.snowBallStack": "Change snow ball stack count",
 
   "text.autoconfig.sihywtcamc.category.tools": "Tools",
   "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues": "Change attributes values",

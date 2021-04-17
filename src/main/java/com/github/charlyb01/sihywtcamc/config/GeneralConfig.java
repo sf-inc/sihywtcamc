@@ -14,11 +14,14 @@ public class GeneralConfig implements ConfigData {
 
     public static class Stacks {
         @ConfigEntry.Gui.RequiresRestart
-        public boolean potionStackable = true;
+        @ConfigEntry.BoundedDiscrete(min = 1, max = 64)
+        public int potionStack = 16;
         @ConfigEntry.Gui.RequiresRestart
-        public boolean milkBucketStackable = true;
+        @ConfigEntry.BoundedDiscrete(min = 1, max = 64)
+        public int milkBucketStack = 16;
         @ConfigEntry.Gui.RequiresRestart
-        public boolean snowBallVeryStackable = true;
+        @ConfigEntry.BoundedDiscrete(min = 1, max = 64)
+        public int snowBallStack = 64;
     }
 
     @ConfigEntry.Gui.CollapsibleObject

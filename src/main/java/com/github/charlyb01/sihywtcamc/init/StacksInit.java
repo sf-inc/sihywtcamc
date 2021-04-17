@@ -9,14 +9,8 @@ public class StacksInit {
     }
 
     public static void init() {
-        if (ModConfig.get().generalConfig.stacks.potionStackable) {
-            ((ItemAccessor) Items.POTION).setMaxCount(16);
-        }
-        if (ModConfig.get().generalConfig.stacks.milkBucketStackable) {
-            ((ItemAccessor) Items.MILK_BUCKET).setMaxCount(16);
-        }
-        if (ModConfig.get().generalConfig.stacks.snowBallVeryStackable) {
-            ((ItemAccessor) Items.SNOWBALL).setMaxCount(64);
-        }
+        ((ItemAccessor) Items.POTION).setMaxCount(ModConfig.get().generalConfig.stacks.potionStack);
+        ((ItemAccessor) Items.MILK_BUCKET).setMaxCount(ModConfig.get().generalConfig.stacks.milkBucketStack);
+        ((ItemAccessor) Items.SNOWBALL).setMaxCount(ModConfig.get().generalConfig.stacks.snowBallStack);
     }
 }
