@@ -1,6 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.attributes;
 
-import com.github.charlyb01.sihywtcamc.init.attributes.ReachAttribute;
+import com.github.charlyb01.sihywtcamc.ReachAttribute;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;

@@ -1,7 +1,7 @@
 package com.github.charlyb01.sihywtcamc.mixin.attributes;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
-import com.github.charlyb01.sihywtcamc.init.attributes.ReachAttribute;
+import com.github.charlyb01.sihywtcamc.ReachAttribute;
 import com.google.common.collect.Multimap;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.GameRenderer;

@@ -1,4 +1,4 @@
-package com.github.charlyb01.sihywtcamc.init.attributes;
+package com.github.charlyb01.sihywtcamc;
 
 import net.minecraft.entity.attribute.ClampedEntityAttribute;
 import net.minecraft.entity.attribute.EntityAttribute;
