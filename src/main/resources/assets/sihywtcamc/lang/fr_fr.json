@@ -20,6 +20,8 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.swordSweepingEdge": "Dégâts de zone seulement avec l'enchantement",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc": "Plus petit arc de protection du bouclier",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc.@Tooltip": "Protège de 120 degrés au lieu de 180",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceProtection": "Ajouter un max d'absorption de dégât au bouclier",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldDamageProtection": "Absorption max de dégât du bouclier",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldEnchantable": "Bouclier enchantable",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldThorns": "Epines sur le bouclier via enclume",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldCooldown": "Cooldown bouclier après attaque à la hache",

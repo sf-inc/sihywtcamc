@@ -19,6 +19,9 @@ public class ToolsConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     public boolean shieldReduceArc = true;
+    public boolean shieldReduceProtection = true;
+    @ConfigEntry.BoundedDiscrete(min = 1, max = 20)
+    public int shieldDamageProtection = 5;
     public boolean shieldEnchantable = true;
     public boolean shieldThorns = true;
 

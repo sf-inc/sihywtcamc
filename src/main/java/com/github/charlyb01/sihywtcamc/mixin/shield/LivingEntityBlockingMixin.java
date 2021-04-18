@@ -9,6 +9,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -16,6 +17,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityBlockingMixin extends Entity {
+    @Unique
+    private float sihywtcamc_damageAmount;
+
     @Shadow protected abstract boolean blockedByShield(DamageSource source);
 
     public LivingEntityBlockingMixin(EntityType<?> type, World world) {
@@ -45,7 +49,21 @@ public abstract class LivingEntityBlockingMixin extends Entity {
                 && ModConfig.get().generalConfig.eggSnowball.shieldStopKnockack
                 && this.blockedByShield(source)) {
             bl = true;
+        } else if (Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) > 0.0F
+                && ModConfig.get().toolsConfig.shieldReduceProtection) {
+            bl = false;
         }
         return bl;
+    }
+
+    @Inject(method = "damage", at = @At("HEAD"))
+    private void saveDamageAmount(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        sihywtcamc_damageAmount = amount;
+    }
+
+    @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isProjectile()Z"))
+    private float reduceDamageIfBlocked(float amount2, DamageSource source, float amount) {
+        return ModConfig.get().toolsConfig.shieldReduceProtection ?
+                Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;
     }
 }
