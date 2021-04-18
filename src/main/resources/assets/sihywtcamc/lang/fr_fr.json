@@ -15,7 +15,7 @@
 
   "text.autoconfig.sihywtcamc.category.tools": "Outils",
   "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues": "Changer les valeurs des attributs",
-  "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues.@Tooltip": "Dégât et vitesse d'attaque",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues.@Tooltip": "Valeurs modifiables uniquement dans le json",
   "text.autoconfig.sihywtcamc.option.toolsConfig.reachAttribute": "Ajouter l'attribut de portée d'attaque",
   "text.autoconfig.sihywtcamc.option.toolsConfig.swordSweepingEdge": "Dégâts de zone seulement avec l'enchantement",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc": "Plus petit arc de protection du bouclier",
@@ -29,6 +29,12 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "Incompatible avec flamme/frappe/infinité",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive": "Enchantement tir multiple inclusif",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible avec perforation",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.modifiedTools": "Nouvelles valeurs d'attributs",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier": "Outil à modifier",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.identifier": "Identifiant de l'outil",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.attackDamage": "Nouveau point d'attaque",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.attackSpeed": "Nouvelle vitesse d'attaque",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.attackReach": "Nouvelle portée d'attaque",
 
   "attribute.name.generic.attack_reach": "portée d'attaque"
 }

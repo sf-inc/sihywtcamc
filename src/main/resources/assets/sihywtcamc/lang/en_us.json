@@ -15,7 +15,7 @@
 
   "text.autoconfig.sihywtcamc.category.tools": "Tools",
   "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues": "Change attributes values",
-  "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues.@Tooltip": "Attack damage and speed",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.newAttributesValues.@Tooltip": "Values modifiable only in the json",
   "text.autoconfig.sihywtcamc.option.toolsConfig.reachAttribute": "Add attack reach attribute",
   "text.autoconfig.sihywtcamc.option.toolsConfig.swordSweepingEdge": "Sweep attack only with enchant",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc": "Shield smaller protection arc",
@@ -29,6 +29,12 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "Incompatible with flame/punch/infinity",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive": "Multishot enchant inclusive",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible with piercing",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.modifiedTools": "New attributes values",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier": "Tool to modify",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.identifier": "Tool identifier",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.attackDamage": "New attack damage",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.attackSpeed": "New attack speed",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.attackReach": "New attack reach",
 
   "attribute.name.generic.attack_reach": "Attack Reach"
 }
