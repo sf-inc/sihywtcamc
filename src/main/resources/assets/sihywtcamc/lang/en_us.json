@@ -31,6 +31,7 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "Incompatible with flame/punch/infinity",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive": "Multishot enchant inclusive",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible with piercing",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.flintFireEntities": "Flint and steel sets entities on fire",
   "text.autoconfig.sihywtcamc.option.toolsConfig.modifiedTools": "New attributes values",
   "text.autoconfig.sihywtcamc.option.ToolsModifier": "Tool to modify",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.identifier": "Tool identifier",

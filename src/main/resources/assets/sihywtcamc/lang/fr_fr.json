@@ -31,6 +31,7 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "Incompatible avec flamme/frappe/infinité",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive": "Enchantement tir multiple inclusif",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible avec perforation",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.flintFireEntities": "Le briquet met les entités en feu",
   "text.autoconfig.sihywtcamc.option.toolsConfig.modifiedTools": "Nouvelles valeurs d'attributs",
   "text.autoconfig.sihywtcamc.option.ToolsModifier": "Outil à modifier",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.identifier": "Identifiant de l'outil",

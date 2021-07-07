@@ -35,6 +35,8 @@ public class ToolsConfig implements ConfigData {
     @ConfigEntry.Gui.Tooltip()
     public boolean crossbowMultishotInclusive = true;
 
+    public boolean flintFireEntities = true;
+
     public static class ToolsModifier {
         public String identifier;
         public float attackDamage;

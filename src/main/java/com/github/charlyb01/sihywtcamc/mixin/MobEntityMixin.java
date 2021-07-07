@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin;
 
+import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -29,7 +30,7 @@ public abstract class MobEntityMixin extends LivingEntity {
     @Inject(method = "interactMob", at = @At("HEAD"), cancellable = true)
     private void setOnFireMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
         ItemStack itemStack = player.getStackInHand(hand);
-        if (itemStack.getItem().equals(Items.FLINT_AND_STEEL)) {
+        if (ModConfig.get().toolsConfig.flintFireEntities && itemStack.getItem().equals(Items.FLINT_AND_STEEL)) {
             this.world.playSound(player, this.getX(), this.getY(), this.getZ(), SoundEvents.ITEM_FLINTANDSTEEL_USE, this.getSoundCategory(), 1.0F, this.random.nextFloat() * 0.4F + 0.8F);
             if (!this.world.isClient) {
                 this.setOnFireFor(3);
