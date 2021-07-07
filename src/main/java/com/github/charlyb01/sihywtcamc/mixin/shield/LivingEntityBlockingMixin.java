@@ -20,7 +20,7 @@ public abstract class LivingEntityBlockingMixin extends Entity {
     @Unique
     private float sihywtcamc_damageAmount;
 
-    @Shadow protected abstract boolean blockedByShield(DamageSource source);
+    @Shadow public abstract boolean blockedByShield(DamageSource source);
 
     public LivingEntityBlockingMixin(EntityType<?> type, World world) {
         super(type, world);
@@ -33,7 +33,7 @@ public abstract class LivingEntityBlockingMixin extends Entity {
             Vec3d vec3d = source.getPosition();
             if (vec3d != null) {
                 Vec3d vec3d2 = this.getRotationVec(1.0F);
-                Vec3d vec3d3 = vec3d.reverseSubtract(this.getPos()).normalize();
+                Vec3d vec3d3 = vec3d.relativize(this.getPos()).normalize();
                 vec3d3 = new Vec3d(vec3d3.x, 0.0D, vec3d3.z);
                 cir.setReturnValue(vec3d3.dotProduct(vec3d2) < -0.5D);
             } else {
