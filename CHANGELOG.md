@@ -6,6 +6,12 @@ Currently, every **stable** mod version is available on **1.16.4** and **1.16.5*
 * **x.X versions** are either updates that add content or major bug fixes
 * **x.x.X versions** are either small content updates (language translation, new textures, ...) or bug fixes
 
+## v1.4
+
+* Now use the reach lib for better compatibility
+* Shield blocks 100% of explosions damage if not caused by the player
+* Shield blocks instantly, without any delay
+
 ## v1.3.1
 
 * Added configuration for flint that fires entities
