@@ -1,6 +1,5 @@
 package com.github.charlyb01.sihywtcamc.init;
 
-import com.github.charlyb01.sihywtcamc.ReachAttribute;
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import com.github.charlyb01.sihywtcamc.config.ToolsConfig;
 import com.github.charlyb01.sihywtcamc.mixin.ItemAccessor;
@@ -8,6 +7,7 @@ import com.github.charlyb01.sihywtcamc.mixin.attributes.MiningToolAccessor;
 import com.github.charlyb01.sihywtcamc.mixin.attributes.SwordAccessor;
 import com.github.charlyb01.sihywtcamc.mixin.attributes.TridentAccessor;
 import com.google.common.collect.ImmutableMultimap;
+import com.jamieswhiteshirt.reachentityattributes.ReachEntityAttributes;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -47,7 +47,7 @@ public class AttributesInit {
         String modifier = item instanceof MiningToolItem ? "Tool modifier" : "Weapon modifier";
         float damage = toolsModifier.attackDamage - 1.0F;   // GENERIC_ATTACK_DAMAGE base value is changed for players!
         float speed = toolsModifier.attackSpeed  - (float) EntityAttributes.GENERIC_ATTACK_SPEED.getDefaultValue();
-        float reach = toolsModifier.attackReach  - (float) ReachAttribute.GENERIC_ATTACK_REACH.getDefaultValue();
+        float reach = toolsModifier.attackReach  - 3.0F;    // base value is not accessible through the API as it's additive!
 
         itemBuilder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(((ItemAccessor) item).getATTACK_DAMAGE_MODIFIER_ID(),
                 modifier, damage, EntityAttributeModifier.Operation.ADDITION));
@@ -55,7 +55,7 @@ public class AttributesInit {
                 modifier, speed, EntityAttributeModifier.Operation.ADDITION));
 
         if (ModConfig.get().toolsConfig.reachAttribute && reach != 0) {
-            itemBuilder.put(ReachAttribute.GENERIC_ATTACK_REACH, new EntityAttributeModifier(ReachAttribute.ATTACK_REACH_MODIFIER_ID,
+            itemBuilder.put(ReachEntityAttributes.ATTACK_RANGE, new EntityAttributeModifier(
                     modifier, reach, EntityAttributeModifier.Operation.ADDITION));
         }
 

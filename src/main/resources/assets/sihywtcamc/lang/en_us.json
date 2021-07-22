@@ -37,7 +37,5 @@
   "text.autoconfig.sihywtcamc.option.ToolsModifier.identifier": "Tool identifier",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.attackDamage": "New attack damage",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.attackSpeed": "New attack speed",
-  "text.autoconfig.sihywtcamc.option.ToolsModifier.attackReach": "New attack reach",
-
-  "attribute.name.generic.attack_reach": "Attack Reach"
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.attackReach": "New attack reach"
 }
