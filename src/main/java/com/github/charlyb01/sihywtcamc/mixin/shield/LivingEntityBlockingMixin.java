@@ -10,9 +10,7 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
@@ -65,5 +63,10 @@ public abstract class LivingEntityBlockingMixin extends Entity {
     private float reduceDamageIfBlocked(float amount2, DamageSource source, float amount) {
         return ModConfig.get().toolsConfig.shieldReduceProtection && !source.isExplosive() ?
                 Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;
+    }
+
+    @ModifyConstant(method = "isBlocking", constant = @Constant(intValue = 5))
+    private int instantlyBlock(int minUsingTick) {
+        return ModConfig.get().toolsConfig.shieldInstantBlock ? 0 : minUsingTick;
     }
 }

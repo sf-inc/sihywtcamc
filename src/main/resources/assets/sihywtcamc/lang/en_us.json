@@ -22,6 +22,7 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceArc.@Tooltip": "Protect 120 degrees instead of 180",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldReduceProtection": "Shield has a max damage absorption",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldDamageProtection": "Shield max damage absorption",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.shieldInstantBlock": "Shield instantly blocks",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldEnchantable": "Shield enchantable",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldThorns": "Thorns on shield with anvil",
   "text.autoconfig.sihywtcamc.option.toolsConfig.shieldCooldown": "Shield cooldown after axe attack",

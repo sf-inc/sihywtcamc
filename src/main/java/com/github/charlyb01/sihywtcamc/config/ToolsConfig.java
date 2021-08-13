@@ -22,6 +22,7 @@ public class ToolsConfig implements ConfigData {
     public boolean shieldReduceProtection = true;
     @ConfigEntry.BoundedDiscrete(min = 1, max = 20)
     public int shieldDamageProtection = 5;
+    public boolean shieldInstantBlock = true;
     public boolean shieldEnchantable = true;
     public boolean shieldThorns = true;
 
