@@ -11,6 +11,8 @@ Currently, every **stable** mod version is available on **1.16.4** and **1.16.5*
 * Now use the reach lib for better compatibility
 * Shield blocks 100% of explosions damage if not caused by the player
 * Shield blocks instantly, without any delay
+* Rework tools/weapons config so you can put several ids with same attributes to write less lines: note that 
+  you need to delete the old config file!
 
 ## v1.3.1
 
