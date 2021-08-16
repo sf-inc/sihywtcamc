@@ -65,8 +65,10 @@ public abstract class LivingEntityBlockingMixin extends Entity {
                 Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;
     }
 
-    @ModifyConstant(method = "isBlocking", constant = @Constant(intValue = 5))
-    private int instantlyBlock(int minUsingTick) {
-        return ModConfig.get().toolsConfig.shieldInstantBlock ? 0 : minUsingTick;
+    @Inject(method = "isBlocking", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/Item;getMaxUseTime(Lnet/minecraft/item/ItemStack;)I"), cancellable = true)
+    private void instantlyBlock(CallbackInfoReturnable<Boolean> cir) {
+        if (ModConfig.get().toolsConfig.shieldInstantBlock) {
+            cir.setReturnValue(true);
+        }
     }
 }
