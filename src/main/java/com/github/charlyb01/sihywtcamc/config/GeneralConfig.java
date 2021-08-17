@@ -9,6 +9,8 @@ public class GeneralConfig implements ConfigData {
     public boolean eatDrinkCancellable = true;
     public boolean drinkFaster = true;
 
+    public boolean appropriateInvulnerability = true;
+
     @ConfigEntry.Gui.CollapsibleObject
     public Stacks stacks = new Stacks();
 

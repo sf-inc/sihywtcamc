@@ -4,6 +4,7 @@
   "text.autoconfig.sihywtcamc.category.general": "Général",
   "text.autoconfig.sihywtcamc.option.generalConfig.eatDrinkCancellable": "Annuler manger/boire quand attaqué",
   "text.autoconfig.sihywtcamc.option.generalConfig.drinkFaster": "Boire les potions plus vite",
+  "text.autoconfig.sihywtcamc.option.generalConfig.appropriateInvulnerability": "Temps d'invulnérabilité adaptatif",
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball": "Oeufs/Boules de neige",
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.cooldown": "Ont un cooldown",
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.knockbackPlayer": "Knockback les joueurs",

@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "ItemAccessor",
+    "LivingEntityMixin",
     "MobEntityMixin",
     "PlayerAxeMixin",
     "PlayerKnockbackMixin",
