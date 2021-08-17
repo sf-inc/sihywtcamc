@@ -33,8 +33,8 @@ public abstract class LivingEntityMixin extends Entity {
                 for (Map.Entry<EntityAttribute, EntityAttributeModifier> entry : multimap.entries()) {
                     EntityAttributeModifier entityAttributeModifier = entry.getValue();
                     if (entityAttributeModifier.getId() == ((ItemAccessor) item).getATTACK_SPEED_MODIFIER_ID()) {
-                        this.timeUntilRegen = (int) (40.0D / (entityAttributeModifier.getValue()
-                                + entity.getAttributeBaseValue(EntityAttributes.GENERIC_ATTACK_SPEED)));
+                        this.timeUntilRegen = (int) (50.0D / (entityAttributeModifier.getValue()
+                                + EntityAttributes.GENERIC_ATTACK_SPEED.getDefaultValue()));
                         this.timeUntilRegen = Math.min(this.timeUntilRegen, 20);
                     }
                 }
