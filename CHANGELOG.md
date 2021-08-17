@@ -6,6 +6,12 @@ Currently, every **stable** mod version is available on **1.16.4** and **1.16.5*
 * **x.X versions** are either updates that add content or major bug fixes
 * **x.x.X versions** are either small content updates (language translation, new textures, ...) or bug fixes
 
+## v1.4.1
+
+* Adaptive invulnerability time: it depends on the used tool/weapon's attack speed. Resulting invulnerability 
+  won't exceed vanilla one (20 ticks) but can be shorter
+* Fixed compatibility issue for shield delay feature
+
 ## v1.4
 
 * Now use the reach lib for better compatibility
