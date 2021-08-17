@@ -22,8 +22,7 @@ public class ShieldMixin extends Item {
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         super.onStoppedUsing(stack, world, user, remainingUseTicks);
         if (ModConfig.get().toolsConfig.axeCooldown
-                && user instanceof PlayerEntity) {
-            PlayerEntity playerEntity = (PlayerEntity) user;
+                && user instanceof PlayerEntity playerEntity) {
             if (playerEntity.getMainHandStack().getItem() instanceof AxeItem) {
                 playerEntity.getItemCooldownManager().set(playerEntity.getMainHandStack().getItem(), 40);
             }

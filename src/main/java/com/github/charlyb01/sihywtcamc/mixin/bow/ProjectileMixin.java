@@ -17,8 +17,7 @@ public abstract class ProjectileMixin {
 
     @Shadow public abstract void setDamage(double damage);
 
-    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/PersistentProjectileEntity;setDamage(D)V", shift = At.Shift.AFTER),
-            method = "applyEnchantmentEffects")
+    @Inject(method = "applyEnchantmentEffects", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/PersistentProjectileEntity;setDamage(D)V", shift = At.Shift.AFTER))
     private void changePowerDamageP(LivingEntity entity, float damageModifier, CallbackInfo ci) {
         if (ModConfig.get().toolsConfig.bowLessPower) {
             int level = EnchantmentHelper.getEquipmentLevel(Enchantments.POWER, entity);

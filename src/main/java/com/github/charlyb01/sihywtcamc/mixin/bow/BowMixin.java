@@ -14,8 +14,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(BowItem.class)
 public class BowMixin {
-    @ModifyVariable(at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/PersistentProjectileEntity;setDamage(D)V", shift = At.Shift.AFTER),
-            method = "onStoppedUsing")
+    @ModifyVariable(method = "onStoppedUsing", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/projectile/PersistentProjectileEntity;setDamage(D)V", shift = At.Shift.AFTER))
     private PersistentProjectileEntity changePowerDamageB(PersistentProjectileEntity projectileEntity, ItemStack stack, World world,
                                                           LivingEntity user, int remainingUseTicks) {
         if (ModConfig.get().toolsConfig.bowLessPower) {
