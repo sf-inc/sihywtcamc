@@ -27,7 +27,7 @@
     "sihywtcamc.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.0",
+    "fabricloader": ">=0.12.6",
     "fabric": "*"
   },
   "custom": {
