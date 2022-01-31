@@ -20,6 +20,12 @@ public class GeneralConfig implements ConfigData {
         public int potionStack = 16;
         @ConfigEntry.Gui.RequiresRestart
         @ConfigEntry.BoundedDiscrete(min = 1, max = 64)
+        public int splashPotionStack = 16;
+        @ConfigEntry.Gui.RequiresRestart
+        @ConfigEntry.BoundedDiscrete(min = 1, max = 64)
+        public int lingeringPotionStack = 16;
+        @ConfigEntry.Gui.RequiresRestart
+        @ConfigEntry.BoundedDiscrete(min = 1, max = 64)
         public int milkBucketStack = 16;
         @ConfigEntry.Gui.RequiresRestart
         @ConfigEntry.BoundedDiscrete(min = 1, max = 64)

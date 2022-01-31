@@ -11,6 +11,8 @@
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.shieldStopKnockack": "Recul annulé en parant avec le bouclier",
   "text.autoconfig.sihywtcamc.option.generalConfig.stacks": "Stacks",
   "text.autoconfig.sihywtcamc.option.generalConfig.stacks.potionStack": "Changer le stack des potions",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.splashPotionStack": "Changer le stack des potions jetables",
+  "text.autoconfig.sihywtcamc.option.generalConfig.stacks.lingeringPotionStack": "Changer le stack des potions persistantes",
   "text.autoconfig.sihywtcamc.option.generalConfig.stacks.milkBucketStack": "Changer le stack des seaux de lait",
   "text.autoconfig.sihywtcamc.option.generalConfig.stacks.snowBallStack": "Changer le stack des boules de neige",
 
