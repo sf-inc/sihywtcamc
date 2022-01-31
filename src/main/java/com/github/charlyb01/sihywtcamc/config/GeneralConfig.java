@@ -9,6 +9,11 @@ public class GeneralConfig implements ConfigData {
     public boolean eatDrinkCancellable = true;
     public boolean drinkFaster = true;
 
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 200)
+    public int splashPotionCooldown = 100;
+    @ConfigEntry.BoundedDiscrete(min = 0, max = 200)
+    public int lingeringPotionCooldown = 100;
+
     public boolean appropriateInvulnerability = true;
 
     @ConfigEntry.Gui.CollapsibleObject

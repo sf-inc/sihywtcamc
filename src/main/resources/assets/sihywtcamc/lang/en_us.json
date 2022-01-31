@@ -4,6 +4,8 @@
   "text.autoconfig.sihywtcamc.category.general": "General",
   "text.autoconfig.sihywtcamc.option.generalConfig.eatDrinkCancellable": "Cancel eat/drink action when attacked",
   "text.autoconfig.sihywtcamc.option.generalConfig.drinkFaster": "Drink potions faster",
+  "text.autoconfig.sihywtcamc.option.generalConfig.splashPotionCooldown": "Change splash potion cooldown duration",
+  "text.autoconfig.sihywtcamc.option.generalConfig.lingeringPotionCooldown": "Change lingering potion cooldown duration",
   "text.autoconfig.sihywtcamc.option.generalConfig.appropriateInvulnerability": "Adaptive invulnerability time",
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball": "Eggs/Snow balls",
   "text.autoconfig.sihywtcamc.option.generalConfig.eggSnowball.cooldown": "Have cooldown",
