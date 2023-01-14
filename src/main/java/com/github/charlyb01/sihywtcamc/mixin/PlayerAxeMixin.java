@@ -23,7 +23,7 @@ public abstract class PlayerAxeMixin extends LivingEntity {
         super(entityType, world);
     }
 
-    @Inject(method = "attack", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "attack", at = @At("HEAD"))
     private void axeDisablesShield(Entity target, CallbackInfo ci) {
         if (ModConfig.get().toolsConfig.shieldCooldown
                 && this.getMainHandStack().getItem() instanceof AxeItem) {

@@ -59,7 +59,7 @@ public abstract class LivingEntityBlockingMixin extends Entity {
         sihywtcamc_damageAmount = amount;
     }
 
-    @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isProjectile()Z"))
+    @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isProjectile()Z"), argsOnly = true)
     private float reduceDamageIfBlocked(float amount2, DamageSource source, float amount) {
         return ModConfig.get().toolsConfig.shieldReduceProtection && !source.isExplosive() ?
                 Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;

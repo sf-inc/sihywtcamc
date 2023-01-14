@@ -15,8 +15,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.TridentItem;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import java.util.Optional;
 
@@ -37,7 +37,7 @@ public class AttributesInit {
         if (ModConfig.get().toolsConfig.newAttributesValues) {
             for (ToolsConfig.ToolsModifier toolsModifier: ModConfig.get().toolsConfig.modifiedTools) {
                 for (String identifier: toolsModifier.identifiers) {
-                    Item item = Registry.ITEM.get(new Identifier(identifier));
+                    Item item = Registries.ITEM.get(new Identifier(identifier));
                     initModifiers(item, toolsModifier);
                 }
             }
