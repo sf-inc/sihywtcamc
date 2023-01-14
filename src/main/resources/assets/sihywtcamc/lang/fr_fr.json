@@ -39,8 +39,8 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible avec perforation",
   "text.autoconfig.sihywtcamc.option.toolsConfig.flintFireEntities": "Le briquet met les entités en feu",
   "text.autoconfig.sihywtcamc.option.toolsConfig.modifiedTools": "Nouvelles valeurs d'attributs",
-  "text.autoconfig.sihywtcamc.option.ToolsModifier": "Outil à modifier",
-  "text.autoconfig.sihywtcamc.option.ToolsModifier.identifier": "Identifiant de l'outil",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier": "Entrée custom",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.identifiers": "Identifiants des outils",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.attackDamage": "Nouveau point d'attaque",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.attackSpeed": "Nouvelle vitesse d'attaque",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.attackReach": "Nouvelle portée d'attaque"

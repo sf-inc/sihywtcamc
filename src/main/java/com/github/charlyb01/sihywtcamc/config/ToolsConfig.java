@@ -10,7 +10,6 @@ import java.util.List;
 @Config(name = "tools")
 public class ToolsConfig implements ConfigData {
     @ConfigEntry.Gui.RequiresRestart
-    @ConfigEntry.Gui.Tooltip
     public boolean newAttributesValues = true;
     @ConfigEntry.Gui.RequiresRestart
     public boolean reachAttribute = true;
@@ -45,7 +44,7 @@ public class ToolsConfig implements ConfigData {
         public float attackReach;
 
         ToolsModifier() {
-            this(List.of("mymod:bad_sword"), 2, 2, 2.5F);
+            this(List.of("example_mod:example_sword"), 2, 2, 2.5F);
         }
         ToolsModifier(final List<String> identifiers, final float attackDamage, final float attackSpeed, final float attackReach) {
             this.identifiers = identifiers;
@@ -55,7 +54,6 @@ public class ToolsConfig implements ConfigData {
         }
     }
 
-    @ConfigEntry.Gui.Excluded
     public List<ToolsModifier> modifiedTools = Arrays.asList(
 
             new ToolsModifier(List.of(

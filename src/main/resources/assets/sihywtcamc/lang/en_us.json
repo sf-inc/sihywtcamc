@@ -39,8 +39,8 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "Compatible with piercing",
   "text.autoconfig.sihywtcamc.option.toolsConfig.flintFireEntities": "Flint and steel sets entities on fire",
   "text.autoconfig.sihywtcamc.option.toolsConfig.modifiedTools": "New attributes values",
-  "text.autoconfig.sihywtcamc.option.ToolsModifier": "Tool to modify",
-  "text.autoconfig.sihywtcamc.option.ToolsModifier.identifier": "Tool identifier",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier": "Custom entry",
+  "text.autoconfig.sihywtcamc.option.ToolsModifier.identifiers": "Tools identifiers",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.attackDamage": "New attack damage",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.attackSpeed": "New attack speed",
   "text.autoconfig.sihywtcamc.option.ToolsModifier.attackReach": "New attack reach"
