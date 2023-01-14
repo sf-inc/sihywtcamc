@@ -10,9 +10,14 @@ import java.util.UUID;
 @Mixin(Item.class)
 public interface ItemAccessor {
     @Accessor
-    UUID getATTACK_DAMAGE_MODIFIER_ID();
+    static UUID getATTACK_DAMAGE_MODIFIER_ID() {
+        throw new AssertionError();
+    }
+
     @Accessor
-    UUID getATTACK_SPEED_MODIFIER_ID();
+    static UUID getATTACK_SPEED_MODIFIER_ID() {
+        throw new AssertionError();
+    }
 
     @Accessor
     @Mutable

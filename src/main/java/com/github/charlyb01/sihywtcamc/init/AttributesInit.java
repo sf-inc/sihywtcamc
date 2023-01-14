@@ -51,9 +51,9 @@ public class AttributesInit {
         float speed = toolsModifier.attackSpeed  - (float) EntityAttributes.GENERIC_ATTACK_SPEED.getDefaultValue();
         float reach = toolsModifier.attackReach  - 3.0F;    // base value is not accessible through the API as it's additive!
 
-        itemBuilder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(((ItemAccessor) item).getATTACK_DAMAGE_MODIFIER_ID(),
+        itemBuilder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ItemAccessor.getATTACK_DAMAGE_MODIFIER_ID(),
                 modifier, damage, EntityAttributeModifier.Operation.ADDITION));
-        itemBuilder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(((ItemAccessor) item).getATTACK_SPEED_MODIFIER_ID(),
+        itemBuilder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ItemAccessor.getATTACK_SPEED_MODIFIER_ID(),
                 modifier, speed, EntityAttributeModifier.Operation.ADDITION));
 
         if (ModConfig.get().toolsConfig.reachAttribute && reach != 0) {
