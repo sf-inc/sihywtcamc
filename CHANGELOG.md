@@ -6,6 +6,11 @@ Currently, every **stable** mod version is available on **1.16.4** and **1.16.5*
 * **x.X versions** are either updates that add content or major bug fixes
 * **x.x.X versions** are either small content updates (language translation, new textures, ...) or bug fixes
 
+## v1.4.3
+
+* Port to 1.19.3
+* Modified tools' attributes values can be modified in gui via mod menu
+
 ## v1.4.2
 
 * Splash potions can be stacked by 16 (config)
