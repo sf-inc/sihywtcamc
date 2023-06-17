@@ -34,7 +34,7 @@
   "text.autoconfig.sihywtcamc.option.toolsConfig.axeCooldown": "使用盾牌后斧子进入冷却时间",
   "text.autoconfig.sihywtcamc.option.toolsConfig.bowLessPower": "削弱力量附魔",
   "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive": "力量附魔兼容性削弱",
-  "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "不兼容火矢、击退和无限附魔",
+  "text.autoconfig.sihywtcamc.option.toolsConfig.bowPowerExclusive.@Tooltip": "不兼容火矢、冲击和无限附魔",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive": "多重射击附魔兼容性增强",
   "text.autoconfig.sihywtcamc.option.toolsConfig.crossbowMultishotInclusive.@Tooltip": "兼容穿透附魔",
   "text.autoconfig.sihywtcamc.option.toolsConfig.flintFireEntities": "打火石直接点燃生物",
