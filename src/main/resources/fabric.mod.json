@@ -8,7 +8,7 @@
     "Pardys"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/sihywtcamc",
+    "homepage": "https://modrinth.com/mod/combat",
     "issues": "https://github.com/sf-inc/sihywtcamc/issues",
     "sources": "https://github.com/sf-inc/sihywtcamc"
   },
@@ -29,11 +29,5 @@
   "depends": {
     "fabricloader": ">=0.12.6",
     "fabric": "*"
-  },
-  "custom": {
-    "modupdater": {
-      "strategy": "curseforge",
-      "projectID": 448832
-    }
   }
 }
