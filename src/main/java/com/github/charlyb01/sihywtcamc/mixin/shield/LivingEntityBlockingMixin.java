@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -43,7 +44,7 @@ public abstract class LivingEntityBlockingMixin extends Entity {
     @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;applyDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"))
     private boolean cancelNoDamageKnockback(boolean bl, DamageSource source, float amount) {
         if (amount == 0.0F
-                && source.isProjectile()
+                && source.isIn(DamageTypeTags.IS_PROJECTILE)
                 && ModConfig.get().generalConfig.eggSnowball.shieldStopKnockack
                 && this.blockedByShield(source)) {
             bl = true;
@@ -59,9 +60,9 @@ public abstract class LivingEntityBlockingMixin extends Entity {
         sihywtcamc_damageAmount = amount;
     }
 
-    @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isProjectile()Z"), argsOnly = true)
+    @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z"), argsOnly = true)
     private float reduceDamageIfBlocked(float amount2, DamageSource source, float amount) {
-        return ModConfig.get().toolsConfig.shieldReduceProtection && !source.isExplosive() ?
+        return ModConfig.get().toolsConfig.shieldReduceProtection && !source.isIn(DamageTypeTags.IS_EXPLOSION) ?
                 Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;
     }
 

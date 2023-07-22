@@ -31,8 +31,8 @@ public abstract class MobEntityMixin extends LivingEntity {
     private void setOnFireMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
         ItemStack itemStack = player.getStackInHand(hand);
         if (ModConfig.get().toolsConfig.flintFireEntities && itemStack.getItem().equals(Items.FLINT_AND_STEEL)) {
-            this.world.playSound(player, this.getX(), this.getY(), this.getZ(), SoundEvents.ITEM_FLINTANDSTEEL_USE, this.getSoundCategory(), 1.0F, this.random.nextFloat() * 0.4F + 0.8F);
-            if (!this.world.isClient) {
+            this.getWorld().playSound(player, this.getX(), this.getY(), this.getZ(), SoundEvents.ITEM_FLINTANDSTEEL_USE, this.getSoundCategory(), 1.0F, this.random.nextFloat() * 0.4F + 0.8F);
+            if (!this.getWorld().isClient()) {
                 this.setOnFireFor(3);
                 if (!player.isCreative()) {
                     this.setTarget(player);
@@ -41,7 +41,7 @@ public abstract class MobEntityMixin extends LivingEntity {
                         EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND));
             }
 
-            cir.setReturnValue(ActionResult.success(this.world.isClient));
+            cir.setReturnValue(ActionResult.success(this.getWorld().isClient()));
         }
     }
 }
