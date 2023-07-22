@@ -1,10 +1,12 @@
 # Versions Changelog
 
-Currently, every **stable** mod version is available on **1.16.4** and **1.16.5** Minecraft versions.
-
 * **X versions** are major updates with lots of new content. Very rare
 * **x.X versions** are either updates that add content or major bug fixes
 * **x.x.X versions** are either small content updates (language translation, new textures, ...) or bug fixes
+
+## v1.4.4
+
+* Port to 1.20.1
 
 ## v1.4.3
 
