@@ -4,6 +4,12 @@
 * **x.X versions** are either updates that add content or major bug fixes
 * **x.x.X versions** are either small content updates (language translation, new textures, ...) or bug fixes
 
+## v1.4.5
+
+* Fix damages that were broken since 1.20 port
+* Fix config option that was not taken into account for modded tools.  
+  It was On even when disabled (if modded tools were inside the config file).
+
 ## v1.4.4
 
 * Port to 1.20.1
