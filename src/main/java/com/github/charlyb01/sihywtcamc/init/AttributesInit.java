@@ -25,6 +25,9 @@ public class AttributesInit {
     }
 
     public static void initItem(final Identifier id, final Item item) {
+        if (!ModConfig.get().toolsConfig.newAttributesValues) {
+            return;
+        }
         Optional<ToolsConfig.ToolsModifier> optional = ModConfig.get().toolsConfig.modifiedTools.stream()
                 .filter(toolModifier -> toolModifier.identifiers.contains(id.toString())).findAny();
         ToolsConfig.ToolsModifier toolsModifier = optional.orElse(null);
@@ -34,12 +37,13 @@ public class AttributesInit {
     }
 
     public static void init() {
-        if (ModConfig.get().toolsConfig.newAttributesValues) {
-            for (ToolsConfig.ToolsModifier toolsModifier: ModConfig.get().toolsConfig.modifiedTools) {
-                for (String identifier: toolsModifier.identifiers) {
-                    Item item = Registries.ITEM.get(new Identifier(identifier));
-                    initModifiers(item, toolsModifier);
-                }
+        if (!ModConfig.get().toolsConfig.newAttributesValues) {
+            return;
+        }
+        for (ToolsConfig.ToolsModifier toolsModifier: ModConfig.get().toolsConfig.modifiedTools) {
+            for (String identifier: toolsModifier.identifiers) {
+                Item item = Registries.ITEM.get(new Identifier(identifier));
+                initModifiers(item, toolsModifier);
             }
         }
     }
