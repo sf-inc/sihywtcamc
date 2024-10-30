@@ -1,11 +1,13 @@
 package com.github.charlyb01.sihywtcamc.mixin.shield;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.registry.tag.DamageTypeTags;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,9 +33,9 @@ public abstract class LivingEntityBlockingMixin extends Entity {
         if (ModConfig.get().toolsConfig.shieldReduceArc) {
             Vec3d vec3d = source.getPosition();
             if (vec3d != null) {
-                Vec3d vec3d2 = this.getRotationVec(1.0F);
-                Vec3d vec3d3 = vec3d.relativize(this.getPos()).normalize();
-                vec3d3 = new Vec3d(vec3d3.x, 0.0D, vec3d3.z);
+                Vec3d vec3d2 = this.getRotationVector(0.0F, this.getHeadYaw());
+                Vec3d vec3d3 = vec3d.relativize(this.getPos());
+                vec3d3 = vec3d3.withAxis(Direction.Axis.Y, 0.0).normalize();
                 cir.setReturnValue(vec3d3.dotProduct(vec3d2) < -0.5D);
             } else {
                 cir.setReturnValue(false);
@@ -66,10 +68,10 @@ public abstract class LivingEntityBlockingMixin extends Entity {
                 Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;
     }
 
-    @Inject(method = "isBlocking", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/Item;getMaxUseTime(Lnet/minecraft/item/ItemStack;)I"), cancellable = true)
-    private void instantlyBlock(CallbackInfoReturnable<Boolean> cir) {
-        if (ModConfig.get().toolsConfig.shieldInstantBlock) {
-            cir.setReturnValue(true);
-        }
+    @ModifyExpressionValue(method = "isBlocking", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/Item;getMaxUseTime(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/LivingEntity;)I"))
+    private int instantlyBlock(int original) {
+        return ModConfig.get().toolsConfig.shieldInstantBlock
+                ? original + 5
+                : original;
     }
 }

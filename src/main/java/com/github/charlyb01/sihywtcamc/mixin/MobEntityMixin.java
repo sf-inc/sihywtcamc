@@ -2,7 +2,6 @@ package com.github.charlyb01.sihywtcamc.mixin;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,8 +36,7 @@ public abstract class MobEntityMixin extends LivingEntity {
                 if (!player.isCreative()) {
                     this.setTarget(player);
                 }
-                itemStack.damage(1, player, playerEntity -> playerEntity.sendEquipmentBreakStatus(hand.equals(Hand.MAIN_HAND) ?
-                        EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND));
+                itemStack.damage(1, player, LivingEntity.getSlotForHand(hand));
             }
 
             cir.setReturnValue(ActionResult.success(this.getWorld().isClient()));

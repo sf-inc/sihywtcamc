@@ -39,14 +39,14 @@ public class ToolsConfig implements ConfigData {
 
     public static class ToolsModifier {
         public List<String> identifiers;
-        public float attackDamage;
-        public float attackSpeed;
-        public float attackReach;
+        public double attackDamage;
+        public double attackSpeed;
+        public double attackReach;
 
         ToolsModifier() {
-            this(List.of("example_mod:example_sword"), 2, 2, 2.5F);
+            this(List.of("example_mod:example_sword"), 2, 2, 2.5);
         }
-        ToolsModifier(final List<String> identifiers, final float attackDamage, final float attackSpeed, final float attackReach) {
+        ToolsModifier(List<String> identifiers, double attackDamage, double attackSpeed, double attackReach) {
             this.identifiers = identifiers;
             this.attackDamage = attackDamage;
             this.attackSpeed = attackSpeed;
@@ -60,25 +60,25 @@ public class ToolsConfig implements ConfigData {
                     "minecraft:wooden_axe",
                     "minecraft:stone_axe",
                     "minecraft:golden_axe",
-                    "minecraft:netherite_shovel") , 5, 2, 2.5F),
-            new ToolsModifier(List.of("minecraft:iron_axe"), 6, 2, 2.5F),
-            new ToolsModifier(List.of("minecraft:diamond_axe"), 7, 2, 2.5F),
-            new ToolsModifier(List.of("minecraft:netherite_axe"), 8, 2, 2.5F),
+                    "minecraft:netherite_shovel") , 5, 2, 2.5),
+            new ToolsModifier(List.of("minecraft:iron_axe"), 6, 2, 2.5),
+            new ToolsModifier(List.of("minecraft:diamond_axe"), 7, 2, 2.5),
+            new ToolsModifier(List.of("minecraft:netherite_axe"), 8, 2, 2.5),
 
             new ToolsModifier(List.of(
                     "minecraft:wooden_pickaxe",
                     "minecraft:stone_pickaxe",
-                    "minecraft:golden_pickaxe"), 3, 2.5F, 2.5F),
-            new ToolsModifier(List.of("minecraft:iron_pickaxe"), 4, 2.5F, 2.5F),
-            new ToolsModifier(List.of("minecraft:diamond_pickaxe"), 5, 2.5F, 2.5F),
-            new ToolsModifier(List.of("minecraft:netherite_pickaxe"), 6, 2.5F, 2.5F),
+                    "minecraft:golden_pickaxe"), 3, 2.5, 2.5),
+            new ToolsModifier(List.of("minecraft:iron_pickaxe"), 4, 2.5, 2.5),
+            new ToolsModifier(List.of("minecraft:diamond_pickaxe"), 5, 2.5, 2.5),
+            new ToolsModifier(List.of("minecraft:netherite_pickaxe"), 6, 2.5, 2.5),
 
             new ToolsModifier(List.of(
                     "minecraft:wooden_shovel",
                     "minecraft:stone_shovel",
-                    "minecraft:golden_shovel"), 2, 2, 2.5F),
-            new ToolsModifier(List.of("minecraft:iron_shovel"), 3, 2, 2.5F),
-            new ToolsModifier(List.of("minecraft:diamond_shovel"), 4, 2, 2.5F),
+                    "minecraft:golden_shovel"), 2, 2, 2.5),
+            new ToolsModifier(List.of("minecraft:iron_shovel"), 3, 2, 2.5),
+            new ToolsModifier(List.of("minecraft:diamond_shovel"), 4, 2, 2.5),
 
             new ToolsModifier(List.of(
                     "minecraft:wooden_sword",
@@ -88,13 +88,13 @@ public class ToolsConfig implements ConfigData {
             new ToolsModifier(List.of("minecraft:diamond_sword"), 6, 3, 3),
             new ToolsModifier(List.of("minecraft:netherite_sword"), 7, 3, 3),
 
-            new ToolsModifier(List.of("minecraft:wooden_hoe"), 2, 2, 3.5F),
-            new ToolsModifier(List.of("minecraft:stone_hoe"), 2, 2.5F, 3.5F),
-            new ToolsModifier(List.of("minecraft:golden_hoe"), 2, 3.5F, 3.5F),
-            new ToolsModifier(List.of("minecraft:iron_hoe"), 3, 3, 3.5F),
-            new ToolsModifier(List.of("minecraft:diamond_hoe"), 3, 3.5F, 3.5F),
-            new ToolsModifier(List.of("minecraft:netherite_hoe"), 4, 3.5F, 3.5F),
+            new ToolsModifier(List.of("minecraft:wooden_hoe"), 2, 2, 3.5),
+            new ToolsModifier(List.of("minecraft:stone_hoe"), 2, 2.5, 3.5),
+            new ToolsModifier(List.of("minecraft:golden_hoe"), 2, 3.5, 3.5),
+            new ToolsModifier(List.of("minecraft:iron_hoe"), 3, 3, 3.5),
+            new ToolsModifier(List.of("minecraft:diamond_hoe"), 3, 3.5, 3.5),
+            new ToolsModifier(List.of("minecraft:netherite_hoe"), 4, 3.5, 3.5),
 
-            new ToolsModifier(List.of("minecraft:trident"), 7, 2, 3.5F)
+            new ToolsModifier(List.of("minecraft:trident"), 7, 2, 3.5)
     );
 }

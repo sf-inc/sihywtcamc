@@ -1,6 +1,7 @@
 package com.github.charlyb01.sihywtcamc.mixin.drink;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -21,7 +22,9 @@ public abstract class PlayerEatDrinkMixin extends LivingEntity {
     @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/player/PlayerEntity;dropShoulderEntities()V"))
     private void cancelEatDrink(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (ModConfig.get().generalConfig.eatDrinkCancellable && source.getAttacker() != null) {
-            if (this.getActiveItem().isFood() || this.getActiveItem().getItem() instanceof PotionItem) {
+            if (this.getActiveItem().get(DataComponentTypes.FOOD) != null
+                    || this.getActiveItem().getItem() instanceof PotionItem) {
+                // TODO: Cancel milk bucket too
                 this.clearActiveItem();
             }
         }

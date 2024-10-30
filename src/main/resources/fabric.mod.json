@@ -28,6 +28,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.12.6",
-    "fabric": "*"
+    "fabric-api": "*"
   }
 }

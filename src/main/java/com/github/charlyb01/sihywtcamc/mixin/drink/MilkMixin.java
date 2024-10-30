@@ -1,10 +1,11 @@
 package com.github.charlyb01.sihywtcamc.mixin.drink;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.MilkBucketItem;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(MilkBucketItem.class)
 public class MilkMixin extends Item {
@@ -12,8 +13,8 @@ public class MilkMixin extends Item {
         super(settings);
     }
 
-    @Override
-    public int getMaxUseTime(ItemStack stack) {
-        return ModConfig.get().generalConfig.drinkFaster ? 20 : 32;
+    @ModifyReturnValue(method = "getMaxUseTime", at = @At("RETURN"))
+    private int shortedDrinkTime(int original) {
+        return ModConfig.get().generalConfig.drinkFaster ? 20 : original;
     }
 }
