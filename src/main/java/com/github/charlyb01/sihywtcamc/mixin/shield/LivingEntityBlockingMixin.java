@@ -1,7 +1,13 @@
 package com.github.charlyb01.sihywtcamc.mixin.shield;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
+import com.llamalad7.mixinextras.expression.Definition;
+import com.llamalad7.mixinextras.expression.Expression;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -11,7 +17,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -20,8 +25,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class LivingEntityBlockingMixin extends Entity {
     @Unique
     private float sihywtcamc_damageAmount;
-
-    @Shadow public abstract boolean blockedByShield(DamageSource source);
 
     public LivingEntityBlockingMixin(EntityType<?> type, World world) {
         super(type, world);
@@ -42,13 +45,16 @@ public abstract class LivingEntityBlockingMixin extends Entity {
         }
     }
 
+    @Definition(id = "amount", local = @Local(ordinal = 0, type = float.class))
+    @Expression("amount > 0.0")
+    @WrapOperation(method = "damage", at = @At(value = "MIXINEXTRAS:EXPRESSION", ordinal = 0))
+    private boolean blockNullDamage(float left, float right, Operation<Boolean> original) {
+        return original.call(left, right) || left == right;
+    }
+
     @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;applyDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"))
     private boolean cancelNoDamageKnockback(boolean bl, DamageSource source, float amount) {
-        if (amount == 0.0F
-                && source.isIn(DamageTypeTags.IS_PROJECTILE)
-                && this.blockedByShield(source)) {
-            bl = true;
-        } else if (Math.max(0.0F, this.sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) > 0.0F
+        if (Math.max(0.0F, this.sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) > 0.0F
                 && ModConfig.get().toolsConfig.shieldReduceProtection) {
             bl = false;
         }
