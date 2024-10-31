@@ -5,6 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SplashPotionItem;
+import net.minecraft.item.ThrowablePotionItem;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -14,8 +15,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(SplashPotionItem.class)
-public class SplashPotionMixin extends Item {
-    public SplashPotionMixin(Settings settings) {
+public class SplashPotionMixin extends ThrowablePotionItem {
+    public SplashPotionMixin(Item.Settings settings) {
         super(settings);
     }
 
