@@ -1,4 +1,4 @@
-package com.github.charlyb01.sihywtcamc.mixin.shield;
+package com.github.charlyb01.sihywtcamc.mixin.entity;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import com.llamalad7.mixinextras.expression.Definition;

@@ -1,4 +1,4 @@
-package com.github.charlyb01.sihywtcamc.mixin.drink;
+package com.github.charlyb01.sihywtcamc.mixin.entity;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.component.DataComponentTypes;

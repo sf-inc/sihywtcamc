@@ -1,4 +1,4 @@
-package com.github.charlyb01.sihywtcamc.mixin;
+package com.github.charlyb01.sihywtcamc.mixin.entity;
 
 import com.github.charlyb01.sihywtcamc.config.Constants;
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
