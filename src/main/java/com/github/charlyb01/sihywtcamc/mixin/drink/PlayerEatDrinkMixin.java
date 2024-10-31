@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
 import net.minecraft.item.PotionItem;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,8 +24,8 @@ public abstract class PlayerEatDrinkMixin extends LivingEntity {
     private void cancelEatDrink(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
         if (ModConfig.get().generalConfig.eatDrinkCancellable && source.getAttacker() != null) {
             if (this.getActiveItem().get(DataComponentTypes.FOOD) != null
-                    || this.getActiveItem().getItem() instanceof PotionItem) {
-                // TODO: Cancel milk bucket too
+                    || this.getActiveItem().getItem() instanceof PotionItem
+                    || this.getActiveItem().isOf(Items.MILK_BUCKET)) {
                 this.clearActiveItem();
             }
         }
