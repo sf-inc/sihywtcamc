@@ -27,19 +27,18 @@ public abstract class LivingEntityBlockingMixin extends Entity {
         super(type, world);
     }
 
-    @Inject(method = "blockedByShield", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;getPosition()Lnet/minecraft/util/math/Vec3d;"),
-            cancellable = true)
-    private void reduceShieldBlockingArc(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
-        if (ModConfig.get().toolsConfig.shieldReduceArc) {
-            Vec3d vec3d = source.getPosition();
-            if (vec3d != null) {
-                Vec3d vec3d2 = this.getRotationVector(0.0F, this.getHeadYaw());
-                Vec3d vec3d3 = vec3d.relativize(this.getPos());
-                vec3d3 = vec3d3.withAxis(Direction.Axis.Y, 0.0).normalize();
-                cir.setReturnValue(vec3d3.dotProduct(vec3d2) < -0.5D);
-            } else {
-                cir.setReturnValue(false);
-            }
+    @ModifyReturnValue(method = "blockedByShield", at = @At(value = "RETURN", ordinal = 0))
+    private boolean reduceShieldBlockingArc(boolean original, DamageSource source) {
+        if (!ModConfig.get().toolsConfig.shieldReduceArc) return original;
+
+        Vec3d vec3d = source.getPosition();
+        if (vec3d != null) {
+            Vec3d vec3d2 = this.getRotationVector(0.0F, this.getHeadYaw());
+            Vec3d vec3d3 = vec3d.relativize(this.getPos());
+            vec3d3 = vec3d3.withAxis(Direction.Axis.Y, 0.0).normalize();
+            return vec3d3.dotProduct(vec3d2) < -0.5D;
+        } else {
+            return false;
         }
     }
 
