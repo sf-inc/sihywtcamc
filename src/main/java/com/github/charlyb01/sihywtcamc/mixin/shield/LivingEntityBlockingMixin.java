@@ -9,6 +9,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityStatuses;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -17,10 +18,14 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.*;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityBlockingMixin extends Entity {
+    @Shadow public abstract boolean blockedByShield(DamageSource source);
+
     public LivingEntityBlockingMixin(EntityType<?> type, World world) {
         super(type, world);
     }
@@ -78,6 +83,13 @@ public abstract class LivingEntityBlockingMixin extends Entity {
             return amount == 0.f;
         } else {
             return original;
+        }
+    }
+
+    @Inject(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;sendEntityDamage(Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;)V"))
+    private void sendBlockingStatusEvenWhenDamaged(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
+        if (this.blockedByShield(source)) {
+            this.getWorld().sendEntityStatus(this, EntityStatuses.BLOCK_WITH_SHIELD);
         }
     }
 
