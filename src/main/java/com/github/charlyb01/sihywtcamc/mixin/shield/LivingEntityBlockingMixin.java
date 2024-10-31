@@ -47,10 +47,9 @@ public abstract class LivingEntityBlockingMixin extends Entity {
     private boolean cancelNoDamageKnockback(boolean bl, DamageSource source, float amount) {
         if (amount == 0.0F
                 && source.isIn(DamageTypeTags.IS_PROJECTILE)
-                && ModConfig.get().generalConfig.eggSnowball.shieldStopKnockack
                 && this.blockedByShield(source)) {
             bl = true;
-        } else if (Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) > 0.0F
+        } else if (Math.max(0.0F, this.sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) > 0.0F
                 && ModConfig.get().toolsConfig.shieldReduceProtection) {
             bl = false;
         }
@@ -59,13 +58,13 @@ public abstract class LivingEntityBlockingMixin extends Entity {
 
     @Inject(method = "damage", at = @At("HEAD"))
     private void saveDamageAmount(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        sihywtcamc_damageAmount = amount;
+        this.sihywtcamc_damageAmount = amount;
     }
 
     @ModifyVariable(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 1), argsOnly = true)
     private float reduceDamageIfBlocked(float amount2, DamageSource source, float amount) {
         return ModConfig.get().toolsConfig.shieldReduceProtection && !source.isIn(DamageTypeTags.IS_EXPLOSION) ?
-                Math.max(0.0F, sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;
+                Math.max(0.0F, this.sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;
     }
 
     @ModifyExpressionValue(method = "isBlocking", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/Item;getMaxUseTime(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/LivingEntity;)I"))

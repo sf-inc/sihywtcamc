@@ -43,6 +43,5 @@ public class GeneralConfig implements ConfigData {
     public static class EggSnowball {
         public boolean cooldown = true;
         public boolean knockbackPlayer = true;
-        public boolean shieldStopKnockack = true;
     }
 }

@@ -11,8 +11,6 @@ import java.util.List;
 public class ToolsConfig implements ConfigData {
     @ConfigEntry.Gui.RequiresRestart
     public boolean newAttributesValues = true;
-    @ConfigEntry.Gui.RequiresRestart
-    public boolean reachAttribute = true;
 
     public boolean swordSweepingEdge = true;
 
