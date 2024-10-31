@@ -17,15 +17,10 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityBlockingMixin extends Entity {
-    @Unique
-    private float sihywtcamc_damageAmount;
-
     public LivingEntityBlockingMixin(EntityType<?> type, World world) {
         super(type, world);
     }
@@ -52,24 +47,38 @@ public abstract class LivingEntityBlockingMixin extends Entity {
         return original.call(left, right) || left == right;
     }
 
-    @ModifyVariable(method = "damage", ordinal = 0, at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;applyDamage(Lnet/minecraft/entity/damage/DamageSource;F)V"))
-    private boolean cancelNoDamageKnockback(boolean bl, DamageSource source, float amount) {
-        if (Math.max(0.0F, this.sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) > 0.0F
-                && ModConfig.get().toolsConfig.shieldReduceProtection) {
-            bl = false;
+    @Definition(id = "g", local = @Local(ordinal = 2, type = float.class))
+    @Definition(id = "amount", local = @Local(ordinal = 0, type = float.class))
+    @Expression("g = @(amount)")
+    @ModifyExpressionValue(method = "damage", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private float updateAbsorbedDamage(float original, DamageSource source, float amount) {
+        if (ModConfig.get().toolsConfig.shieldReduceProtection && !source.isIn(DamageTypeTags.IS_EXPLOSION)) {
+            return Math.min(original, (float) ModConfig.get().toolsConfig.shieldDamageProtection);
+        } else {
+            return original;
         }
-        return bl;
     }
 
-    @Inject(method = "damage", at = @At("HEAD"))
-    private void saveDamageAmount(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        this.sihywtcamc_damageAmount = amount;
+    @Definition(id = "amount", local = @Local(ordinal = 0, type = float.class))
+    @Expression("amount = @(0.0)")
+    @ModifyExpressionValue(method = "damage", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private float updateDealtDamage(float original, DamageSource source, float amount) {
+        if (ModConfig.get().toolsConfig.shieldReduceProtection && !source.isIn(DamageTypeTags.IS_EXPLOSION)) {
+            return Math.max(original, amount - (float) ModConfig.get().toolsConfig.shieldDamageProtection);
+        } else {
+            return original;
+        }
     }
 
-    @ModifyVariable(method = "damage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 1), argsOnly = true)
-    private float reduceDamageIfBlocked(float amount2, DamageSource source, float amount) {
-        return ModConfig.get().toolsConfig.shieldReduceProtection && !source.isIn(DamageTypeTags.IS_EXPLOSION) ?
-                Math.max(0.0F, this.sihywtcamc_damageAmount - ModConfig.get().toolsConfig.shieldDamageProtection) : amount2;
+    @Definition(id = "bl", local = @Local(ordinal = 0, type = boolean.class))
+    @Expression("bl = @(true)")
+    @ModifyExpressionValue(method = "damage", at = @At("MIXINEXTRAS:EXPRESSION"))
+    private boolean updateBlockedByShield(boolean original, DamageSource source, float amount) {
+        if (ModConfig.get().toolsConfig.shieldReduceProtection && !source.isIn(DamageTypeTags.IS_EXPLOSION)) {
+            return amount == 0.f;
+        } else {
+            return original;
+        }
     }
 
     @ModifyExpressionValue(method = "isBlocking", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/Item;getMaxUseTime(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/LivingEntity;)I"))
