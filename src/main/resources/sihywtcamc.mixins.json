@@ -5,20 +5,21 @@
   "package": "com.github.charlyb01.sihywtcamc.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "entity.LivingEntityBlockingMixin",
     "entity.LivingEntityInvulnerabilityMixin",
-    "entity.MobEntityMixin",
     "entity.PlayerAxeMixin",
+    "entity.PlayerEatDrinkMixin",
     "entity.PlayerKnockbackMixin",
+    "entity.PlayerSweepAttackMixin",
+    "item.FlintAndSteelMixin",
+    "item.ItemMixin",
+    "item.ShieldMixin",
     "item.potion.LingeringPotionMixin",
     "item.potion.MilkMixin",
-    "entity.PlayerEatDrinkMixin",
     "item.potion.PotionMixin",
     "item.potion.SplashPotionMixin",
     "item.projectile.EggMixin",
-    "item.projectile.SnowBallMixin",
-    "entity.LivingEntityBlockingMixin",
-    "item.ShieldMixin",
-    "entity.PlayerSweepAttackMixin"
+    "item.projectile.SnowBallMixin"
   ],
   "client": [
   ],
