@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.drink;
 
+import com.github.charlyb01.sihywtcamc.config.Constants;
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.item.Item;
@@ -15,6 +16,8 @@ public class MilkMixin extends Item {
 
     @ModifyReturnValue(method = "getMaxUseTime", at = @At("RETURN"))
     private int shortedDrinkTime(int original) {
-        return ModConfig.get().generalConfig.drinkFaster ? 20 : original;
+        return ModConfig.get().generalConfig.drinkFaster
+                ? Constants.DRINK_DURATION
+                : original;
     }
 }

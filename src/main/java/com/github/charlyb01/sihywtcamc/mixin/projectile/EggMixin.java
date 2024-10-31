@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin.projectile;
 
+import com.github.charlyb01.sihywtcamc.config.Constants;
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.EggItem;
@@ -18,7 +19,7 @@ public class EggMixin {
     @Inject(method = "use", at = @At("HEAD"))
     private void addEggCooldown(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
         if (ModConfig.get().generalConfig.eggSnowball.cooldown) {
-            user.getItemCooldownManager().set(Items.EGG, 4);
+            user.getItemCooldownManager().set(Items.EGG, Constants.SHORT_COOLDOWN);
         }
     }
 }

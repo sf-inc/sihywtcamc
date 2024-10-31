@@ -1,5 +1,6 @@
 package com.github.charlyb01.sihywtcamc.mixin;
 
+import com.github.charlyb01.sihywtcamc.config.Constants;
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -27,7 +28,7 @@ public abstract class PlayerAxeMixin extends LivingEntity {
     private void axeDisablesShield(Entity target, CallbackInfo ci) {
         if (ModConfig.get().toolsConfig.shieldCooldown
                 && this.getMainHandStack().getItem() instanceof AxeItem) {
-            this.getItemCooldownManager().set(Items.SHIELD, 40);
+            this.getItemCooldownManager().set(Items.SHIELD, Constants.LONG_COOLDOWN);
         }
     }
 }
