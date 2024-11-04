@@ -1,6 +1,7 @@
 package com.github.charlyb01.sihywtcamc;
 
 import com.github.charlyb01.sihywtcamc.config.ModConfig;
+import com.github.charlyb01.sihywtcamc.enchantment.EnchantmentModifyCallback;
 import com.github.charlyb01.sihywtcamc.item.AttributeModifierCallback;
 import com.github.charlyb01.sihywtcamc.item.MaxStackSizeCallback;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -15,5 +16,6 @@ public class Sihywtcamc implements ModInitializer {
 
         AttributeModifierCallback.init();
         MaxStackSizeCallback.init();
+        EnchantmentModifyCallback.init();
     }
 }
