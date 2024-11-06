@@ -36,7 +36,7 @@ public class ToolsConfig implements ConfigData {
         public double attackReach;
 
         ToolsModifier() {
-            this(List.of("example_mod:example_sword"), 2, 2, 2.5);
+            this(List.of("example_mod:example_sword"), 5, 3, 3);
         }
         ToolsModifier(List<String> identifiers, double attackDamage, double attackSpeed, double attackReach) {
             this.identifiers = identifiers;
