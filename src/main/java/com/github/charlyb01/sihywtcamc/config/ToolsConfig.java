@@ -21,17 +21,11 @@ public class ToolsConfig implements ConfigData {
     public int shieldDamageProtection = 5;
     public boolean shieldInstantBlock = true;
     public boolean shieldEnchantable = true;
-    public boolean shieldThorns = true;
 
     public boolean shieldCooldown = true;
     public boolean axeCooldown = true;
 
     public boolean bowLessPower = true;
-    @ConfigEntry.Gui.Tooltip()
-    public boolean bowPowerExclusive = true;
-
-    @ConfigEntry.Gui.Tooltip()
-    public boolean crossbowMultishotInclusive = true;
 
     public boolean flintFireEntities = true;
 
