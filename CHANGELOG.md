@@ -4,6 +4,20 @@
 * **x.X versions** are either updates that add content or major bug fixes
 * **x.x.X versions** are either small content updates (language translation, new textures, ...) or bug fixes
 
+## v1.4.6
+
+* Removed reach attribute option, as we don't use a lib anymore but vanilla attributes
+* Removed enchantment compatibility option, as this is a pain to handle with new data system
+  * This includes thorns on shields,
+  * Power incompatibility with flame, punch, infinity
+  * Multishot compatibility with piercing
+* Removed shield stop knockback option, as shield should always behave the same way as with other projectiles
+* Drinking milk bucket can also be cancelled with an attack damage
+* Use item data components to update items attributes
+  * Increase compatibility for any items, modded or not, to update their attributes
+* Overall rewrite to maximize mod compatibility
+* Shield features rewrite to fix minor issues
+
 ## v1.4.5
 
 * Fix damages that were broken since 1.20 port
